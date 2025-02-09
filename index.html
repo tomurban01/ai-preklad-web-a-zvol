@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Překladatel pro YouTubery</title>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            background-color: #f5f5f5;
+            text-align: center;
+        }
+        header {
+            background-color: #ddd;
+            color: black;
+            padding: 120px 20px;
+            font-size: 2em;
+            font-weight: bold;
+            background-image: url('abstract-lines.png');
+            background-size: cover;
+            background-blend-mode: multiply;
+        }
+        section {
+            padding: 80px 20px;
+            max-width: 900px;
+            margin: auto;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+            font-size: 1.3em;
+            font-weight: 500;
+            background-image: url('abstract-lines.png');
+            background-size: cover;
+            background-position: center;
+            background-color: rgba(245, 245, 245, 0.9);
+        }
+        section:nth-child(even) {
+            background-color: rgba(230, 230, 230, 0.9);
+        }
+        .cta {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 20px 40px;
+            background-color: #444;
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 20px;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+        .cta:hover {
+            background-color: #222;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin: 15px 0;
+            font-size: 1.3em;
+            font-weight: 500;
+        }
+        .visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Otevři svůj YouTube kanál světu!</h1>
+        <p>Pomocí našeho AI překladu videí oslov nové publikum a zvýš své zisky.</p>
+        <a href="#kontakt" class="cta">Získej první video zdarma</a>
+    </header>
+    
+    <section id="jak-to-funguje">
+        <h2>Jak to funguje?</h2>
+        <p>🔹 <strong>1. Pošleš nám video</strong> – odkaz nebo soubor</p>
+        <p>🔹 <strong>2. Přeložíme ho a upravíme hlas</strong> – AI dabing + lip-sync</p>
+        <p>🔹 <strong>3. Nahraješ ho na svůj nový kanál</strong> – oslov globální publikum</p>
+    </section>
+    
+    <section id="nabidka">
+        <h2>Co nabízíme?</h2>
+        <ul>
+            <li>✅ Překlad hlasu a lip-sync pomocí AI</li>
+            <li>✅ Titulky a optimalizace pro vyhledávání</li>
+            <li>✅ Překlad obsahu pro TikTok, Instagram, Shorts</li>
+            <li>✅ Kompletní správa lokalizace kanálu</li>
+            <li>✅ Podpora růstu a monetizace</li>
+        </ul>
+    </section>
+    
+    <section id="spoluprace">
+        <h2>Individuální přístup ke spolupráci</h2>
+        <p>Jsme nová firma a hledáme obchodní partnery pro dlouhodobou spolupráci.</p>
+        <p>Fixní odměna, podíl na zisku nebo jejich kombinace.</p>
+        <p>Fixní cena měsíčního programu: 5–10 tisíc Kč, abychom pokryli náklady.</p>
+    </section>
+    
+    <section id="vyhody">
+        <h2>Proč s námi spolupracovat?</h2>
+        <ul>
+            <li>✅ Zvýšení dosahu a odběratelů</li>
+            <li>✅ Vyšší příjmy díky monetizaci</li>
+            <li>✅ Žádná další práce pro YouTubera – my se postaráme o vše</li>
+            <li>✅ Automatizace a profesionální lokalizace obsahu</li>
+        </ul>
+    </section>
+    
+    <section id="ukazky">
+        <h2>Ukázky naší práce</h2>
+        <p>Zde budou video ukázky přeložených videí.</p>
+    </section>
+    
+    <section id="kontakt">
+        <h2>Kontakt</h2>
+        <p>Email: <a href="mailto:info@tvujweb.cz">info@tvujweb.cz</a></p>
+        <p>Chceš začít? Vyplň formulář a my se ti ozveme!</p>
+    </section>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            let sections = document.querySelectorAll("section");
+            let options = { threshold: 0.3 };
+            let observer = new IntersectionObserver(function(entries, observer) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("visible");
+                    }
+                });
+            }, options);
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+        });
+    </script>
+</body>
+</html>
+
