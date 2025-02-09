@@ -17,6 +17,11 @@
             text-align: center;
         }
         header {
+            width: 100vw;
+            position: relative;
+            left: 0;
+            margin: 0;
+            padding: 120px 0;
             background-color: #ddd;
             color: black;
             padding: 120px 20px;
@@ -27,12 +32,17 @@
             background-blend-mode: multiply;
         }
         section {
+            width: 100vw;
+            position: relative;
+            left: 0;
+            margin: 0;
+            padding: 80px 0;
             padding: 80px 20px;
             max-width: 900px;
             margin: auto;
             opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+            transform: translateY(40px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
             font-size: 1.3em;
             font-weight: 500;
             background-image: url('abstract-lines.png');
@@ -68,8 +78,8 @@
             font-weight: 500;
         }
         .visible {
-            opacity: 1;
-            transform: translateY(0);
+            opacity: 1 !important;
+            transform: translateY(0) !important;
         }
     </style>
 </head>
@@ -129,19 +139,17 @@
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             let sections = document.querySelectorAll("section");
-            let options = { threshold: 0.3 };
-            let observer = new IntersectionObserver(function(entries, observer) {
+            let observer = new IntersectionObserver(function(entries) {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         entry.target.classList.add("visible");
                     }
                 });
-            }, options);
-            sections.forEach(section => {
-                observer.observe(section);
-            });
+            }, { threshold: 0.2 });
+            sections.forEach(section => observer.observe(section));
         });
     </script>
 </body>
 </html>
+
 
